@@ -1,15 +1,29 @@
 import { setStatusBarStyle } from 'expo-status-bar'
-import React, { useState } from 'react'
+
+import React, { useEffect, useState } from 'react'
 import { StatusBar } from 'react-native'
 import { KeyboardAvoidingView, StyleSheet, Text, View } from 'react-native'
 import { Button, Image, Input } from 'react-native-elements'
+import { auth } from '../firebase'
 
 const Login = ({navigation}) => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
+    useEffect (()=>{
+       const unSubsribe= auth.onAuthStateChanged((authUser)=>{
+            if(authUser){
+                navigation.replace('Home');
+            }
+        });
+
+        return unSubsribe;
+
+    },[]);
+
     
     const signIn=()=>{
-
+        auth.signInWithEmailAndPassword(email,password);
     }
     return (
       <KeyboardAvoidingView style={styles.container}>
@@ -20,8 +34,8 @@ const Login = ({navigation}) => {
 
               }} style={{width:200,height:195}}/>
               <View style={styles.inputContainer}>
-                  <Input placeholder="Email" autoFocus  type="email" value={email}  onChange={(text)=>setEmail(text)}/>
-                  <Input placeholder="Password"  autoFocus secureTextEntry type="password"  value={password} onChange={(text)=>setPassword(text)}/>
+                  <Input placeholder="Email" autoFocus  type="email" value={email}   onChangeText={(text)=>setEmail(text)}/>
+                  <Input placeholder="Password"  autoFocus secureTextEntry type="password"  value={password}  onChangeText={(text)=>setPassword(text)}/>
               </View>
               <Button containerStyle={styles.button} onPress={signIn} title="Login"/>
               <Button containerStyle={styles.button} onPress={()=>navigation.navigate("Register")} type="outline"  title="Register"/>
