@@ -104,12 +104,12 @@ const CHATS = ({navigation,route}) => {
                     <ScrollView>
                      {messages.map(({id,data})=>(
                          data.email ===auth.currentUser.email?(
-                             <View id={id} style={styles.receiver}>
+                             <View key={id} style={styles.receiver}>
                                  <Avatar.Image source={{uri:data.photoURl}}  size={25}  />
                                  <Text style={styles.receiverText}>{data.message}</Text>
                              </View>
                          ):(
-                                <View id={id} style={styles.sender}>
+                                <View key={id} style={styles.sender}>
                                      <Avatar.Image source={{uri:data.photoURl}} size={25}/>
                                     <Text style={styles.sendertext}>{data.message}</Text>
                                 </View>
