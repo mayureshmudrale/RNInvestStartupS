@@ -56,6 +56,15 @@ const Home = () => {
                 ),
               }}
        />
+        <Tab.Screen name="Freelancer" component={freelancer} 
+               options={{
+                tabBarLabel: 'Freelancer',
+                tabBarIcon: () => (
+                  <Icon name="briefcase" size={26}/>
+                ),
+              }}
+       />
+
         <Tab.Screen name="Profile" component={Profile} 
                options={{
                 tabBarLabel: 'Profile',
@@ -70,6 +79,9 @@ const Home = () => {
                 ),
               }}
        />
+
+    
+
 
 
         </Tab.Navigator>

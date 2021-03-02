@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import Animated, { cond, eq, set, useCode }  from 'react-native-reanimated'
+import Animated from 'react-native-reanimated'
 
 import { Button, Input } from 'react-native-elements'
 import BottomSheet from 'reanimated-bottom-sheet';
@@ -107,7 +107,7 @@ useEffect(()=>{
       
     </View>
     <Input  style={styles.InputFields}  placeholder="Startup Title"  value={title} selectTextOnFocus={true}  onChangeText={(text)=>setTitle(text)}></Input>
-    <Input  style={{height:90,borderColor: 'gray', borderWidth: 1 ,margin:7 ,borderRadius:10}}  selectTextOnFocus={true}  placeholder="Describe Your startup" multiline={true} value={description}   onChangeText={(text)=>setDescription(text)} ></Input>
+    <Input  style={{borderColor: 'gray' ,margin:7 }}   placeholder="Describe Your startup" multiline={true} value={description}   onChangeText={(text)=>setDescription(text)} ></Input>
     <Input  style={styles.InputFields}  selectTextOnFocus={true} placeholder="Share Price" value={sharePrice}   onChangeText={(text)=>setSharePrice(text)}></Input>
     <Input  style={styles.InputFields}  selectTextOnFocus={true}  multiline={true} placeholder="Image Url(optional)" value={ImageUrl}  onChangeText={(text)=>setImageURl(text)} ></Input>
     
@@ -289,7 +289,7 @@ const styles = StyleSheet.create({
     color: '#05375a',
      height: 20, width: 100
   },
-  InputFields:{
-    height: 50, borderColor: 'gray', borderWidth: 1 ,margin:7 ,borderRadius:10
-  }
+  // InputFields:{
+  //   height: 50, borderColor: 'gray', borderWidth: 1 ,margin:7 ,borderRadius:1
+  // }
 })
