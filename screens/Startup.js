@@ -13,6 +13,7 @@ import {auth,db} from '../firebase'
 import 'react-native-get-random-values';
 import { v4 as uuidv4, v4 } from 'uuid';
 import { KeyboardAvoidingView } from 'react-native';
+import { SafeAreaView } from 'react-native';
 const {Value} =Animated
 const Startup = ({navigation}) => {
   
@@ -131,8 +132,10 @@ useEffect(()=>{
   );
 
   return (
+    
     <>
-    <View
+    
+    <SafeAreaView
               style={{
                 flex: 1,
                 
@@ -142,6 +145,7 @@ useEffect(()=>{
                 
               }}
           >
+            
             <Button
               title="Add Your StartUp"
               
@@ -173,8 +177,8 @@ useEffect(()=>{
                 
             </ScrollView>
             
-
-          </View>
+            
+          </SafeAreaView>
           <BottomSheet
         ref={bs}
         snapPoints={[0,465]}
@@ -184,7 +188,9 @@ useEffect(()=>{
         callbackNode={fall}
         enabledGestureInteraction={true}
       />
+      
     </>
+    
   )
 }
 

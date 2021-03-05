@@ -16,6 +16,7 @@ import { auth } from 'firebase';
 import CHATS from './screens/CHATS';
 import SelectContact from './screens/SelectContact';
 import AddFreelance from './screens/AddFreelance';
+import freelancer from './screens/freelancer';
 const _setTimeout = global.setTimeout;
 const _clearTimeout = global.clearTimeout;
 const MAX_TIMER_DURATION_MS = 60 * 1000;
@@ -82,6 +83,7 @@ export default function App() {
       <Stack.Screen name="toChat" component={CHATS} />
       <Stack.Screen name="SelectContac" component={SelectContact} />
       <Stack.Screen name="AddFreelance" component={AddFreelance} />
+      <Stack.Screen name="Freelance" component={freelancer} />
       </Stack.Navigator>
 
 
