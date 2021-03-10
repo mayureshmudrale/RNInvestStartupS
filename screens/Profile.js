@@ -38,7 +38,7 @@ const Profile = ({navigation}) => {
             </View>
             
             <View style={{maxHeight:150,borderBottomColor:"lightgrey",borderBottomWidth:1,flex:1,flexDirection:"row"}}>
-                <Icon name="mail-open" size={26} style={{marginTop:100,marginLeft:90}}/>
+                <Icon name="mail-open" size={26} style={{marginTop:100,marginLeft:10}}/>
                 <Text style={{marginLeft:10,fontWeight:"200",fontSize:20,marginTop:100}}>{auth.currentUser.email}</Text>
             </View>
 

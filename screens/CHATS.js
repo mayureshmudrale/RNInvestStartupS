@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { TouchableOpacity } from 'react-native';
 import { StatusBar } from 'react-native';
 import { ScrollView } from 'react-native';
@@ -15,6 +15,15 @@ import { Input } from 'react-native-elements';
 const CHATS = ({navigation,route}) => {
     const [textInput,setTextInput] = useState('');
     const [messages,setMessages] = useState([]);
+    const [msgstate,setMsgstate ]=useState(true);
+    useEffect(()=>{
+        if(textInput.length===0){
+            setMsgstate(true);
+        }
+        else{
+            setMsgstate(false);
+        }
+    })
     useLayoutEffect(()=>{
         navigation.setOptions({
             title:route.params.toUser,
@@ -120,7 +129,7 @@ const CHATS = ({navigation,route}) => {
                     <View style={styles.footer}>
                            
                            <TextInput placeholder="message" value={textInput}  onChangeText={(text)=>setTextInput(text)} style={styles.TextInput}/>
-                           <TouchableOpacity activeOpacity={0.5} onPress={sendMessage}>
+                           <TouchableOpacity activeOpacity={0.5} disabled={msgstate} onPress={sendMessage}>
   
                               <Ionicons name="send" size={24} color="#2B68E6"/>
                            </TouchableOpacity>
