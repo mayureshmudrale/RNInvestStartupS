@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View,TextInput } from 'react-native'
 import Animated from 'react-native-reanimated'
 
-import { Button,Input } from 'react-native-elements'
+import { Button,Input } from 'react-native-elements';
 import BottomSheet from 'reanimated-bottom-sheet';
 import { TouchableOpacity } from 'react-native'
 
@@ -108,7 +108,7 @@ useEffect(()=>{
       
     </View>
     <Input  style={styles.InputFields}  placeholder="Startup Title"  value={title} selectTextOnFocus={true}  onChangeText={(text)=>setTitle(text)}></Input>
-    <Input  style={{borderColor: 'gray' ,margin:7 }}   placeholder="Describe Your startup" multiline={true} value={description}   onChangeText={(text)=>setDescription(text)} ></Input>
+    <Input  style={{borderColor: 'gray' ,margin:7 }}   selectTextOnFocus={true} placeholder="Describe Your startup" multiline={true} value={description}   onChangeText={(text)=>setDescription(text)} ></Input>
     <Input  style={styles.InputFields}   placeholder="Share Price" value={sharePrice}   onChangeText={(text)=>setSharePrice(text)}></Input>
     <Input  style={styles.InputFields}    multiline={true} placeholder="Image Url(optional)" value={ImageUrl}  onChangeText={(text)=>setImageURl(text)} ></Input>
     
