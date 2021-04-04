@@ -24,7 +24,7 @@ const freelancer = ({navigation}) => {
            {freelancer?.map(freelancer=>{
 
             if(freelancer?.id!=auth.currentUser.uid){
-              return( <View style={{height:220,borderBottomColor:"lightgrey",borderBottomWidth:1,padding:10}}>
+              return( <View style={{height:220,borderBottomColor:"lightgrey",borderBottomWidth:1,padding:10}} key={freelancer?.id}>
               <View style={{height:40,borderBottomColor:"lightgrey",borderBottomWidth:1,padding:10,backgroundColor:"#2C6BED"}} >
 
               <Text style={{fontWeight:"500",fontSize:18,color:"white"}}>{freelancer.data.name} </Text>

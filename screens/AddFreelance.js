@@ -33,7 +33,7 @@ const AddFreelance = ({navigation}) => {
             email:auth.currentUser.email,
             title:title,
             description:description,
-            experience:experience |"beginner"
+            experience:experience || "beginner"
         }).then(
             db.collection('users')
             .doc(auth.currentUser.uid)
@@ -66,9 +66,9 @@ const AddFreelance = ({navigation}) => {
                     Keep it short and make sure it's error-free
                     </Text>
                     
-                <Input placeholder="" style={{alignSelf:"flex-start",borderWidth:1,flex:1,width:500,marginTop:5,borderRadius:5}} value={description} onChangeText={(text)=>setDescription(text)} multiline={true} />
+                <Input placeholder="description" style={{alignSelf:"flex-start",borderWidth:1,flex:1,width:500,marginTop:5,borderRadius:5}} value={description} onChangeText={(text)=>setDescription(text)} multiline={true} />
                 <Text  style={{textAlign:"left",marginLeft:9}}>Experience</Text>
-                <Input placeholder="Experience (beginner-advanced)" style={{alignSelf:"flex-start",borderWidth:1,flex:1,width:500,marginTop:5,borderRadius:5}} value={description} onChangeText={(text)=>setDescription(text)} multiline={true} />
+                <Input placeholder="Experience (beginner-advanced)" style={{alignSelf:"flex-start",borderWidth:1,flex:1,width:500,marginTop:5,borderRadius:5}} value={experience} onChangeText={(text)=>setExperience(text)} multiline={true} />
                 </View>
                 <View style={{flex:1,flexDirection:"row",justifyContent:"space-evenly",bottom:10}}>
                 <View style={{padding:20,height:80,width:120}}>

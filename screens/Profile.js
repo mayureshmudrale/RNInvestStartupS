@@ -13,8 +13,8 @@ const Profile = ({navigation}) => {
     useEffect(()=>{
        db.collection('users')
        .doc(auth.currentUser.uid)
-       .get()
-       .then(snapshot=>{
+       .onSnapshot
+       (snapshot=>{
            setuserDetail(snapshot.data())
        })
     
@@ -58,7 +58,7 @@ const Profile = ({navigation}) => {
            
 
             <View style={{padding:10}}>
-            <TouchableOpacity style={{alignContent:"center",alignItems:"center",backgroundColor:"#2C6BED",height:40,margin:1}} onPress={()=>{navigation.navigate('AddFreelance')}}>
+            <TouchableOpacity style={{alignContent:"center",alignItems:"center",backgroundColor:"#2C6BED",height:40,margin:1}} onPress={signout}>
                 <Text style={{marginTop:9,color:"white"}}>Logout</Text>
             </TouchableOpacity>
             </View>

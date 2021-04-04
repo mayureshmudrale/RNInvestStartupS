@@ -14,7 +14,7 @@ const Chat = ({navigation}) => {
 
     const[Chats,setChats] = useState([]);
     
-    console.log("chats",Chats)
+    
     const Tab = createMaterialTopTabNavigator();
     const globalScreenOption={
         activeTintColor:"white",
@@ -37,7 +37,7 @@ const Chat = ({navigation}) => {
 
           return unsubscribe;
       },[])
-
+      console.log("chats",Chats)
 
       const chat =()=>{
         return(

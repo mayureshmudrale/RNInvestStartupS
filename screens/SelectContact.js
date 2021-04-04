@@ -19,7 +19,7 @@ const SelectContact = ({navigation}) => {
     },[])
    
 
-    const createChat= async(toId,toName,photoURl,email)=>{
+    const createChat=async (toId,toName,photoURl,email)=>{
         
         await db.collection('users')
         .doc(auth.currentUser.uid)
@@ -46,7 +46,7 @@ const SelectContact = ({navigation}) => {
             navigation.navigate('toChat',{id:toId,toUser:toName,tophotoURL:photoURl,toemail:email})
         )
 
-        
+        // navigation.navigate('toChat',{id:toId,toUser:toName,tophotoURL:photoURl,toemail:email})
     }
 
 

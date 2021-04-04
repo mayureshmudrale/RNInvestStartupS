@@ -23,6 +23,7 @@ const [title, setTitle] = useState();
 const[description,setDescription]=useState("");
 const [sharePrice,setSharePrice]=useState("");
 const[ImageUrl,setImageURl]=useState("");
+const[category,setCategory]=useState("")
 const user = auth.currentUser.uid
 const [fieldstate,setfieldState]=useState(true)
 const [StartupDetails,setStartupDetails] = useState([]);
@@ -72,6 +73,7 @@ useEffect(()=>{
     logoUrl:ImageUrl  || "https://previews.123rf.com/images/popaukropa/popaukropa1702/popaukropa170200672/71870912-start-up-logo-startup-emblem-running-business-getting-case-red-up-arrow.jpg",
     displayName:auth.currentUser.displayName,
     photoURl:auth.currentUser.photoURL,
+    category:category,
 
   }).then(
     await db.collection('Startup')
@@ -85,6 +87,7 @@ useEffect(()=>{
       logoUrl:ImageUrl  || "https://previews.123rf.com/images/popaukropa/popaukropa1702/popaukropa170200672/71870912-start-up-logo-startup-emblem-running-business-getting-case-red-up-arrow.jpg",
       displayName:auth.currentUser.displayName,
       photoURl:auth.currentUser.photoURL,
+      category:category,
 
 
   
@@ -107,10 +110,11 @@ useEffect(()=>{
     
       
     </View>
-    <Input  style={styles.InputFields}  placeholder="Startup Title"  value={title} selectTextOnFocus={true}  onChangeText={(text)=>setTitle(text)}></Input>
-    <Input  style={{borderColor: 'gray' ,margin:7 }}   selectTextOnFocus={true} placeholder="Describe Your startup" multiline={true} value={description}   onChangeText={(text)=>setDescription(text)} ></Input>
-    <Input  style={styles.InputFields}   placeholder="Share Price" value={sharePrice}   onChangeText={(text)=>setSharePrice(text)}></Input>
-    <Input  style={styles.InputFields}    multiline={true} placeholder="Image Url(optional)" value={ImageUrl}  onChangeText={(text)=>setImageURl(text)} ></Input>
+    <TextInput  style={styles.TextInput}  placeholder="Startup Title"  value={title} selectTextOnFocus={true}  onChangeText={(text)=>setTitle(text)}></TextInput>
+    <TextInput  style={styles.TextInput}   selectTextOnFocus={true} placeholder="Describe Your startup" multiline={true} value={description}   onChangeText={(text)=>setDescription(text)} ></TextInput>
+    <TextInput  style={styles.TextInput}   placeholder="Share Price" value={sharePrice}   onChangeText={(text)=>setSharePrice(text)}></TextInput>
+    <TextInput  style={styles.TextInput}    multiline={true} placeholder="Image Url (optional)" value={ImageUrl}  onChangeText={(text)=>setImageURl(text)} ></TextInput>
+    <TextInput  style={styles.TextInput}    multiline={true} placeholder="Category (optional)" value={category}  onChangeText={(text)=>setCategory(text)} ></TextInput>
     
    
     <TouchableOpacity style={styles.panelButton} disabled={fieldstate} onPressOut={Add} >
@@ -295,6 +299,18 @@ const styles = StyleSheet.create({
     color: '#05375a',
      height: 20, width: 100
   },
+  TextInput:{
+        
+    height:50,
+   
+    borderColor:"transparent",
+    backgroundColor:"#ECECEC",
+    borderWidth:1,
+    padding:10,
+    color:"grey",
+    borderRadius:10,
+  
+},
   // InputFields:{
   //   height: 50, borderColor: 'gray', borderWidth: 1 ,margin:7 ,borderRadius:1
   // }
