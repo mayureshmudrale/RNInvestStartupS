@@ -82,7 +82,7 @@ const Search=()=>{
                 
 
                 {StartupDetails.map(data=>{
-                    if(data.data.userId!=auth.currentUser.uid && data.data.title.toLowerCase().includes(textInput.toLowerCase()) || data.data.category.toLowerCase().includes(textInput.toLowerCase())  ){
+                    if(data.data.userId!=auth.currentUser.uid && (data.data.title.toLowerCase().includes(textInput.toLowerCase()) || data.data.category.toLowerCase().includes(textInput.toLowerCase()) ) ){
                         return(
                         <StartupComponent
                         key={data?.data.startUpId}

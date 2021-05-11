@@ -110,11 +110,11 @@ useEffect(()=>{
     
       
     </View>
-    <TextInput  style={styles.TextInput}  placeholder="Startup Title"  value={title} selectTextOnFocus={true}  onChangeText={(text)=>setTitle(text)}></TextInput>
-    <TextInput  style={styles.TextInput}   selectTextOnFocus={true} placeholder="Describe Your startup" multiline={true} value={description}   onChangeText={(text)=>setDescription(text)} ></TextInput>
-    <TextInput  style={styles.TextInput}   placeholder="Share Price" value={sharePrice}   onChangeText={(text)=>setSharePrice(text)}></TextInput>
-    <TextInput  style={styles.TextInput}    multiline={true} placeholder="Image Url (optional)" value={ImageUrl}  onChangeText={(text)=>setImageURl(text)} ></TextInput>
-    <TextInput  style={styles.TextInput}    multiline={true} placeholder="Category (optional)" value={category}  onChangeText={(text)=>setCategory(text)} ></TextInput>
+    <Input  style={styles.TextInput}  placeholder="Startup Title"  value={title} selectTextOnFocus={true}  onChangeText={(text)=>setTitle(text)}></Input>
+    <Input  style={styles.TextInput}   selectTextOnFocus={true} placeholder="Describe Your startup" multiline={true} value={description}   onChangeText={(text)=>setDescription(text)} ></Input>
+    <Input  style={styles.TextInput}   placeholder="Share Price" value={sharePrice}   onChangeText={(text)=>setSharePrice(text)}></Input>
+    <Input  style={styles.TextInput}    multiline={true} placeholder="Image Url (optional)" value={ImageUrl}  onChangeText={(text)=>setImageURl(text)} ></Input>
+    <Input  style={styles.TextInput}    multiline={true} placeholder="Category (optional)" value={category}  onChangeText={(text)=>setCategory(text)} ></Input>
     
    
     <TouchableOpacity style={styles.panelButton} disabled={fieldstate} onPressOut={Add} >
@@ -185,7 +185,7 @@ useEffect(()=>{
           </SafeAreaView>
           <BottomSheet
         ref={bs}
-        snapPoints={[0,465]}
+        snapPoints={[0,500]}
         renderContent={renderInner}
         renderHeader={renderHeader}
         initialSnap={0}
@@ -301,14 +301,15 @@ const styles = StyleSheet.create({
   },
   TextInput:{
         
-    height:50,
+    height:20,
    
     borderColor:"transparent",
     backgroundColor:"#ECECEC",
     borderWidth:1,
-    padding:10,
+    padding:5,
     color:"grey",
-    borderRadius:10,
+    borderRadius:2,
+   
   
 },
   // InputFields:{
